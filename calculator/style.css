@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column; /* Center elements vertically */
+    justify-content: center; /* Center elements horizontally */
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 298px;
+    padding: 0px;
+    font-size: 28px;
+    text-align: center; /* Center the text horizontally */
+    border: 2px solid #6e7681; /* Add a border */
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    outline: none; /* Remove the outline on focus */
+    margin-bottom: 20px;
+    margin-right: 20px;
+    height: 50px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+.clear {
+    background-color: #ff5722;
+}
+
+.delete {
+    background-color: #2196f3;
+}
+
+.operator {
+    background-color: #555;
+}
+
+
+
+.delete:hover {
+    background-color: #1976d2;
+}
