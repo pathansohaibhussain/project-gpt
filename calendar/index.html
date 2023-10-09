@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .calendar {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        .calendar-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            font-size: 24px;
+        }
+        .calendar-body {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        td {
+            background-color: #fff;
+        }
+        .today {
+            background-color: #ff5733;
+            color: #fff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cool Calendar</h1>
+    <div class="calendar">
+        <div class="calendar-header">
+            <span id="month-year">October 2023</span>
+        </div>
+        <div class="calendar-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                    <!-- Calendar days will be generated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function generateCalendar() {
+            const calendarBody = document.getElementById("calendar-body");
+            const monthYear = document.getElementById("month-year");
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Clear previous calendar
+            calendarBody.innerHTML = "";
+            
+            // Set the month and year in the header
+            monthYear.innerText = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(now);
+            
+            let date = new Date(year, month, 1);
+            let dayCounter = 0;
+            
+            while (dayCounter < daysInMonth) {
+                const weekRow = document.createElement("tr");
+                
+                for (let i = 0; i < 7; i++) {
+                    const dayCell = document.createElement("td");
+                    if (i >= date.getDay() || dayCounter > 0) {
+                        if (dayCounter === now.getDate() - 1 && year === now.getFullYear() && month === now.getMonth()) {
+                            dayCell.classList.add("today");
+                        }
+                        dayCell.innerText = ++dayCounter;
+                    }
+                    weekRow.appendChild(dayCell);
+                }
+                
+                calendarBody.appendChild(weekRow);
+            }
+        }
+        
+        // Generate the calendar on page load
+        generateCalendar();
+    </script>
+</body>
+</html>
