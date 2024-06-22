@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="6AkaZYRTcRjkbXWLWsaYXCTFvNGzMRBq60Cj1Av-Nf4" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Free Online Game - Play Against AI or Friends | Pathan Sohaib Hussain</title>
+    <meta name="description" content="Play Tic Tac Toe online for free! Challenge our AI or compete with friends. Pathan Sohaib Hussain's portfolio of AI-based games.">
+    <meta name="keywords" content="tictactoefreeonlinegame, tic tac toe, online free game, AI, Human, Computer, netlify, pathan sohaib hussain, portfolio, multiplayer, strategic gameplay, classic board game, web game, mobile-friendly">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .text-white {
+            color: #1f6ca9 !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
+    <div class="container bg-white bg-opacity-20 p-5 rounded-lg shadow-lg">
+        <h1 class="text-4xl font-bold text-white text-center mb-5 animate__animated animate__fadeInDown">Tic-Tac-Toe</h1>
+        <div class="mode-selection text-center mb-4">
+            <button id="computerMode" class="btn btn-primary m-2">Play Against Computer</button>
+            <button id="twoPlayersMode" class="btn btn-secondary m-2">Play Against Friends</button>
+        </div>
+        <div class="message text-center text-white text-xl mb-4" id="message">Select a mode to start the game</div>
+        <div class="board grid grid-cols-3 gap-3 mx-auto animate__animated animate__fadeInUp" id="board">
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="0"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="1"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="2"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="3"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="4"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="5"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="6"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="7"></div>
+            <div class="cell flex items-center justify-center bg-white text-3xl font-bold rounded-lg shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105" data-index="8"></div>
+        </div>
+        <button id="restartButton" class="btn btn-danger mt-4 w-full" disabled>Restart Game</button>
+
+        <!-- Copyright section -->
+        <footer class="text-center mt-4 text-sm text-gray-300">
+            &copy; 2024 Pathan Sohaib Hussain | <a href="https://www.linkedin.com/in/pathan-sohaib-hussain-6b440b255/" target="_blank" class="text-blue-400 hover:text-blue-600">LinkedIn</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

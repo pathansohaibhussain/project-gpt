@@ -1,0 +1,140 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.board {
+    max-width: 320px;
+    display: none; /* Initially hidden */
+}
+
+.board.visible {
+    display: grid; /* Show when .visible class is added */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+.cell.x::before,
+.cell.o::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    animation: pop 0.3s;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell.x::before {
+    content: "\f00d";
+    color: #ff0000;
+}
+
+.cell.o::before {
+    content: "\f2be";
+    color: #0000ff;
+}
+
+#restartButton {
+    transition: transform 0.3s;
+}
+
+#restartButton:hover {
+    transform: scale(1.05);
+}
+
+.active {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@media (max-width: 600px) {
+    .cell {
+        width: 100px;
+        height: 80px;
+        font-size: 2.5em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .message {
+        font-size: 1.5em;
+    }
+
+    .mode-selection button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    #restartButton {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+    
+}
+/* Footer styles */
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    /* Adjust footer for smaller screens */
+    footer {
+        font-size: 0.8rem;
+    }
+}
+.text-gray-300 {
+    --tw-text-opacity: 1;
+    color: rgb(14 98 224);
+}
+.text-blue-400 {
+    --tw-text-opacity: 1;
+    color: rgb(42 221 60);
+}
